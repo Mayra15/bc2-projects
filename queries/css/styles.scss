@@ -1,23 +1,48 @@
+*, *:before, *:after{
+	box-sizing: border-box;
+}
+
 body {
 	background-color: pink;
 }
 
+header{
+	nav{
+		ul{
+			&:before,
+			&:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			li{
+				display: inline-block;
+				float: left;
+				width: 75%;
+			}
+		}
+	}
+}
 main{
 
 	section:first-of-type{
+		background-image: url("http://www.gaglioneanddumas.net/wp-content/uploads/2014/09/sunny_beach.jpg");
+		background-size: cover;
+		background-position: center;
 		div:first-child{
-			width: 25%;
-			/*float: left;*/
+			width: 75%;
+			color: white;
+			background-color: hsla(0,0,0,.5);
 		}
 		div:last-child{
-			width: 75%;
-			/*float:left;*/
+			width: 25%;
 		}
 	}
 	section{
 		div{
 			width: 33.3333%;
 			float: left;
+			padding: 10px;
 		}
 	}
 	section:last-of-type{
@@ -37,11 +62,35 @@ main{
 
 
 @media screen and (min-width: 500px) and (max-width: 756px){
-
+	header{
+		nav{
+			li{
+				display: block;
+				width: 100%;
+				text-align: center;
+				padding: 10px 0;
+			}
+		}
+	}
 }
 
 
 @media screen and (max-width: 500px) {
+	section{
+		div{
+
+			width:100% !important;
+		}
+	}
 	
 }
 
+.no-phone{
+	display:none;
+}
+.header:first-of-type{
+	display:none;
+}
+.header:last-of-type{
+	display:none;
+}
